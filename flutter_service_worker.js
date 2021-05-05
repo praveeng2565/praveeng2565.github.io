@@ -241,17 +241,17 @@ const RESOURCES = {
 "assets/images/xlsio/liabilities.png": "284b091ce4bf5117779c32e43587c480",
 "assets/images/xlsio.png": "35299393c94bdbcbfa7de8be67b5eaa9",
 "assets/images/youtube.png": "0c781d861a8df15b16ed1ddde3d49535",
-"assets/lib/sample_details.json": "84d145f9a0f69604e52685c3d7d4e06d",
-"assets/NOTICES": "fbcc384b0be0fb723ddbd8d324733bdd",
+"assets/lib/sample_details.json": "19ecf3383dae65d46185f9564ea5c213",
+"assets/NOTICES": "acae816e5b4a6939bacda02d112d857c",
 "assets/packages/timezone/data/2020a.tzf": "84285f1f81b999f1de349a723574b3e5",
 "BingSiteAuth.xml": "5a55635fd2a391bdcad8d0ef1af1a17b",
 "favicon.png": "0ff0e0cdd689c586ae5c1aa7ac7c9dcb",
 "googlec03dd4bc003151bc.html": "d8ee63ac530b376c19042286c0935849",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "e610cba56b6cefc8d5b1822078f71a52",
-"/": "e610cba56b6cefc8d5b1822078f71a52",
-"main.dart.js": "dd768f270680174ea24b41108ff8141e",
+"index.html": "a44533e9f2e17491aefb4f447c8eb1fa",
+"/": "a44533e9f2e17491aefb4f447c8eb1fa",
+"main.dart.js": "5ddcbbaf06ffd074801518a4c0a4d8cb",
 "manifest.json": "e0ce32893358312172b53c3721868c70",
 "naver335c61fba11bdb4a502b86bfe2e8db08.html": "85f86c5a9f9bac1ffe7952c2c28fc294",
 "robots.txt": "5634545ff7f473a66679177c67cdfe40",
@@ -274,7 +274,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value, {'cache': 'reload'})));
+        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
     })
   );
 });
